@@ -4,7 +4,7 @@
 #
 # Usage:
 #
-# curl -LsS https://raw.githubusercontent.com/gruntwork-io/gruntwork-installer/v0.0.38/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version v0.0.38
+# curl -LsS https://raw.githubusercontent.com/inContact/gruntwork-installer/v0.0.38/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version v0.0.38
 #
 # Rationale:
 #
@@ -27,7 +27,7 @@ readonly DEFAULT_FETCH_VERSION="v0.4.6"
 readonly FETCH_DOWNLOAD_URL_BASE="https://github.com/gruntwork-io/fetch/releases/download"
 readonly FETCH_INSTALL_PATH="$BIN_DIR/fetch"
 
-readonly GRUNTWORK_INSTALLER_DOWNLOAD_URL_BASE="https://raw.githubusercontent.com/gruntwork-io/gruntwork-installer"
+readonly GRUNTWORK_INSTALLER_DOWNLOAD_URL_BASE="https://raw.githubusercontent.com/inContact/gruntwork-installer"
 readonly GRUNTWORK_INSTALLER_INSTALL_PATH="$BIN_DIR/gruntwork-install"
 readonly GRUNTWORK_INSTALLER_SCRIPT_NAME="gruntwork-install"
 
@@ -51,7 +51,7 @@ function print_usage {
   echo "    bootstrap-gruntwork-installer.sh --version v0.0.38"
   echo
   echo "  One-liner to download this bootstrap script from GitHub and run it to install version v0.0.38:"
-  echo "    curl -Ls https://raw.githubusercontent.com/gruntwork-io/gruntwork-installer/v0.0.38/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version v0.0.38"
+  echo "    curl -Ls https://raw.githubusercontent.com/inContact/gruntwork-installer/v0.0.38/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version v0.0.38"
 }
 
 function maybe_sudo {
