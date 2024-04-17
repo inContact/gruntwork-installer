@@ -17,11 +17,11 @@ Our solution is to make the `gruntwork-install` tool open source and to publish 
 script that anyone can use to install `gruntwork-install` itself. To use it, execute the following:
 
 ```
-curl -LsS https://raw.githubusercontent.com/gruntwork-io/gruntwork-installer/v0.0.38/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version v0.0.38
+curl -LsS https://raw.githubusercontent.com/inContact/gruntwork-installer/v0.0.38/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version v0.0.38
 ```
 
 Notice the `--version` parameter at the end where you specify which version of `gruntwork-install` to install. See the
-[releases](https://github.com/gruntwork-io/gruntwork-installer/releases) page for all available versions.
+[releases](https://github.com/inContact/gruntwork-installer/releases) page for all available versions.
 
 For those concerned about security, see [is it safe to pipe URLs into bash?](#is-it-safe-to-pipe-urls-into-bash) below.
 
@@ -62,18 +62,18 @@ Option                      | Required | Description
 ##### Example 1: Download and Install a Script Module with No Parameters
 
 Install the [ecs-scripts
-module](https://github.com/gruntwork-io/terraform-aws-ecs/tree/main/modules/ecs-scripts) from the [terraform-aws-ecs
-repo](https://github.com/gruntwork-io/terraform-aws-ecs), version `v0.0.1`:
+module](https://github.com/inContact/terraform-aws-ecs/tree/main/modules/ecs-scripts) from the [terraform-aws-ecs
+repo](https://github.com/inContact/terraform-aws-ecs), version `v0.0.1`:
 
 ```
-gruntwork-install --module-name 'ecs-scripts' --repo 'https://github.com/gruntwork-io/terraform-aws-ecs' --tag 'v0.0.1'
+gruntwork-install --module-name 'ecs-scripts' --repo 'https://github.com/inContact/terraform-aws-ecs' --tag 'v0.0.1'
 ```
 
 ##### Example 2: Download and Install a Script Module with Parameters
 
 Install the [fail2ban
-module](https://github.com/gruntwork-io/terraform-aws-security/tree/main/modules/fail2ban) from the [terraform-aws-security
-repo](https://github.com/gruntwork-io/terraform-aws-security), passing two custom parameters to it:
+module](https://github.com/inContact/terraform-aws-security/tree/main/modules/fail2ban) from the [terraform-aws-security
+repo](https://github.com/inContact/terraform-aws-security), passing two custom parameters to it:
 
 
 ```
@@ -117,13 +117,13 @@ and then uses it to install several modules:
     {
       "type": "shell",
       "inline":
-        "curl -Ls https://raw.githubusercontent.com/gruntwork-io/gruntwork-installer/v0.0.38/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version v0.0.16"
+        "curl -Ls https://raw.githubusercontent.com/inContact/gruntwork-installer/v0.0.38/bootstrap-gruntwork-installer.sh | bash /dev/stdin --version v0.0.16"
     },
     {
       "type": "shell",
       "inline": [
-        "gruntwork-install --module-name 'ecs-scripts' --repo 'https://github.com/gruntwork-io/terraform-aws-ecs' --tag 'v0.0.1'",
-        "gruntwork-install --module-name 'fail2ban' --repo 'https://github.com/gruntwork-io/terraform-aws-security' -module-param 'ban-time=3600'",
+        "gruntwork-install --module-name 'ecs-scripts' --repo 'https://github.com/inContact/terraform-aws-ecs' --tag 'v0.0.1'",
+        "gruntwork-install --module-name 'fail2ban' --repo 'https://github.com/inContact/terraform-aws-security' -module-param 'ban-time=3600'",
         "gruntwork-install --binary-name 'gruntkms' --repo 'https://github.com/gruntwork-io/gruntkms' --tag 'v0.0.1'"
       ],
       "environment_vars": ["GITHUB_OAUTH_TOKEN={{user `github_auth_token`}}"]
@@ -196,10 +196,10 @@ it to a GitHub release with the name format `<NAME>_<OS>_<ARCH>`.
 ### Example
 
 For example, in your Packer and Docker templates, you can use `gruntwork-install` to install the [ecs-scripts
-module](https://github.com/gruntwork-io/terraform-aws-ecs/tree/main/modules/ecs-scripts) as follows:
+module](https://github.com/inContact/terraform-aws-ecs/tree/main/modules/ecs-scripts) as follows:
 
 ```
-gruntwork-install --module-name 'ecs-scripts' --repo 'https://github.com/gruntwork-io/terraform-aws-ecs' --tag 'v0.0.1'
+gruntwork-install --module-name 'ecs-scripts' --repo 'https://github.com/inContact/terraform-aws-ecs' --tag 'v0.0.1'
 ```
 
 In https://github.com/gruntwork-io/module-ecs, we download the contents of `/modules/ecs-scripts` and run
